@@ -17,8 +17,8 @@ No providers.
 |------|--------|---------|
 | <a name="module_resource_names"></a> [resource\_names](#module\_resource\_names) | git::https://github.com/nexient-llc/tf-module-resource_name.git | 1.0.0 |
 | <a name="module_resource_group"></a> [resource\_group](#module\_resource\_group) | git::https://github.com/nexient-llc/tf-azurerm-module-resource_group.git | 0.2.0 |
-| <a name="module_vnets"></a> [vnets](#module\_vnets) | git::https://github.com/nexient-llc/tf-azurerm-module_collection-virtual_network.git | feature/update-from-primitive |
-| <a name="module_vpc_peerings"></a> [vpc\_peerings](#module\_vpc\_peerings) | ../.. | n/a |
+| <a name="module_vnets"></a> [vnets](#module\_vnets) | git::https://github.com/nexient-llc/tf-azurerm-module_collection-virtual_network.git | 0.2.0 |
+| <a name="module_vnet_peerings"></a> [vnet\_peerings](#module\_vnet\_peerings) | ../.. | n/a |
 
 ## Resources
 

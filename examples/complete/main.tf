@@ -33,7 +33,7 @@ module "resource_group" {
 }
 
 module "vnets" {
-  source = "git::https://github.com/nexient-llc/tf-azurerm-module_collection-virtual_network.git?ref=feature/update-from-primitive"
+  source = "git::https://github.com/nexient-llc/tf-azurerm-module_collection-virtual_network.git?ref=0.2.0"
 
   network_map = { for name, vnet in var.network_map : name => merge(vnet, {
     resource_group_name = module.resource_names["resource_group"].standard
@@ -44,7 +44,7 @@ module "vnets" {
   depends_on = [module.resource_group]
 }
 
-module "vpc_peerings" {
+module "vnet_peerings" {
   source = "../.."
 
   for_each = toset(keys(var.network_map))

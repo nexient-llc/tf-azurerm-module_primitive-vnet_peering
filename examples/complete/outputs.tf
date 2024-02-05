@@ -12,12 +12,12 @@
 
 output "ids" {
   description = "The IDs of the VPC peering connection."
-  value       = { for key, peering in module.vpc_peerings : key => peering.id }
+  value       = { for key, peering in module.vnet_peerings : key => peering.id }
 }
 
 output "names" {
   description = "The names of the VPC peering connection."
-  value       = { for key, peering in module.vpc_peerings : key => peering.name }
+  value       = { for key, peering in module.vnet_peerings : key => peering.name }
 }
 
 output "resource_group_name" {
