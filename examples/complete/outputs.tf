@@ -10,6 +10,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-output "id" {
-  value = ""
+output "ids" {
+  description = "The IDs of the VPC peering connection."
+  value       = { for key, peering in module.vnet_peerings : key => peering.id }
+}
+
+output "names" {
+  description = "The names of the VPC peering connection."
+  value       = { for key, peering in module.vnet_peerings : key => peering.name }
+}
+
+output "resource_group_name" {
+  value = module.resource_group.name
+}
+
+output "vnet_names" {
+  value = module.vnets.vnet_names
 }
