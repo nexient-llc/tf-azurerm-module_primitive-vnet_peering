@@ -26,7 +26,7 @@ module "resource_names" {
 }
 
 module "resource_group" {
-  source   = "git::https://github.com/nexient-llc/tf-azurerm-module-resource_group.git?ref=0.2.0"
+  source   = "git::https://github.com/nexient-llc/tf-azurerm-module_primitive-resource_group.git?ref=0.2.0"
   name     = module.resource_names["resource_group"].standard
   location = var.resource_names_map["resource_group"].region
   tags     = merge(var.tags, { resource_name = module.resource_names["resource_group"].standard })
