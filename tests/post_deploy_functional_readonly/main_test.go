@@ -27,9 +27,10 @@ const (
 
 func TestVnetPeeringModule(t *testing.T) {
 
-	ctx := types.TestContext{
-		TestConfig: &testimpl.ThisTFModuleConfig{},
-	}
-	lib.RunNonDestructiveTest(t, testConfigsExamplesFolderDefault, infraTFVarFileNameDefault, ctx,
-		testimpl.TestComposableComplete)
+	ctx := types.CreateTestContextBuilder().
+		SetTestConfig(&testimpl.ThisTFModuleConfig{}).
+		SetTestConfigFileName(infraTFVarFileNameDefault).
+		SetTestConfigFolderName(testConfigsExamplesFolderDefault).
+		Build()
+	lib.RunNonDestructiveTest(t, *ctx, testimpl.TestComposableComplete)
 }

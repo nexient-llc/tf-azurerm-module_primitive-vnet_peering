@@ -15,15 +15,13 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestComposableComplete(t *testing.T, testContext types.TestContext) {
-	rgName := terraform.Output(t, testContext.TerratestTerraformOptions, "resource_group_name")
-	vnetNames := terraform.OutputMap(t, testContext.TerratestTerraformOptions, "vnet_names")
-
-	peeringNames := terraform.OutputMap(t, testContext.TerratestTerraformOptions, "names")
+func TestVnetPeering(t *testing.T, testContext types.TestContext) {
+	rgName := terraform.Output(t, testContext.TerratestTerraformOptions(), "resource_group_name")
+	vnetNames := terraform.OutputMap(t, testContext.TerratestTerraformOptions(), "vnet_names")
+	peeringNames := terraform.OutputMap(t, testContext.TerratestTerraformOptions(), "names")
 
 	keys := make([]string, 0, len(peeringNames))
 
-	// Iterate over the map
 	for k := range peeringNames {
 		keys = append(keys, k)
 	}
@@ -64,4 +62,8 @@ func TestComposableComplete(t *testing.T, testContext types.TestContext) {
 		assert.Equal(t, string(*vnetPeering.Properties.PeeringState), "Connected", "Peering must be in connected state")
 	})
 
+}
+
+func TestComposableComplete(t *testing.T, testContext types.TestContext) {
+	TestVnetPeering(t, testContext)
 }

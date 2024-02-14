@@ -7,7 +7,7 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azidentity v1.4.0
 	github.com/Azure/azure-sdk-for-go/sdk/resourcemanager/network/armnetwork/v5 v5.0.0
 	github.com/gruntwork-io/terratest v0.43.12
-	github.com/nexient-llc/lcaf-component-terratest-common v0.0.0-20240117163707-a1dfafae58b4
+	github.com/nexient-llc/lcaf-component-terratest-common v1.0.1
 	github.com/stretchr/testify v1.8.4
 )
 
